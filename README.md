@@ -1,9 +1,10 @@
-### Cyton Robot
+Cyton Robot
+======
 if you don't speak chinese, please [click here](./README_english.md).
 
 本文件夹中包含了多个为Cyton机器人提供ROS支持的软件包。推荐的运行环境为 Ubuntu 14.04 及 ROS Indigo，其他环境下的运行情况没有测试过。
 
-#### 安装软件包
+### 安装软件包
 
 首先创建catkin工作空间 ([教程](http://wiki.ros.org/catkin/Tutorials))。 然后将本文件夹克隆到src/目录下，之后用catkin_make来编译。  
 假设你的工作空间是~/catkin_ws，你需要运行的命令如下：
@@ -37,7 +38,9 @@ $ sudo apt-get install ros-indigo-moveit-kinematics
 $ sudo apt-get install ros-indigo-moveit-ros-move-group
 ```
 
-#### 使用仿真模型
+---
+
+### 使用仿真模型
 
 用Gazebo仿真请运行：
 ```sh
@@ -66,7 +69,9 @@ Tips:
 2. Add “Pose” to rviz Displays and subscribe to /joy_pose in order to see the output from joystick.  
 Note that only planning groups that have IK solvers for all their End Effector parent groups will work.
 
-#### 使用真实的Cyton机器人
+---
+
+### 使用真实的Cyton机器人
 在开始之前，请先安装相应的舵机驱动，步骤如下：
 
 首先，先确认你的电脑上没有事先安装dynamixel_motor，如果安装过的话，请先运行以下指令将其卸载

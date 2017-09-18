@@ -1,8 +1,9 @@
-### Cyton Robot
+Cyton Robot
+======
 
 This repository provides ROS support for the Cyton Robot. The recommend operating environment is on Ubuntu 14.04 with ROS Indigo. So far These packages haven't been tested in other environment.
 
-#### Installation
+### Installation
 
 First set up a catkin workspace (see [this tutorials](http://wiki.ros.org/catkin/Tutorials)).  
 Then clone the repository into the src/ folder. It should look like /path/to/your/catkin_workspace/src/cyton_robot.  
@@ -36,7 +37,9 @@ $ sudo apt-get install ros-indigo-moveit-kinematics
 $ sudo apt-get install ros-indigo-moveit-ros-move-group
 ```
 
-#### Usage with Gazebo Simulation
+---
+
+### Usage with Gazebo Simulation
 
 Bring up the simulated robot in Gazebo:
 ```sh
@@ -64,7 +67,9 @@ Tips:
 1. In the Motion Planning plugin of Rviz, enable “Allow External Comm.” checkbox in the “Planning” tab.  
 2. Add “Pose” to rviz Displays and subscribe to /joy_pose in order to see the output from joystick. Note that only planning groups that have IK solvers for all their End Effector parent groups will work.
 
-#### Usage with real Hardware
+---
+
+### Usage with real Hardware
 Firstly, please install the driver for the servos.
 
 Make sure that you didn't install the package dynamixel_motor. If you did, please remove them with the following command.
