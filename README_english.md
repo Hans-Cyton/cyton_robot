@@ -67,7 +67,7 @@ Tips:
 #### Usage with real Hardware
 Firstly, please install the driver for the servos.
 
-Make sure that you haven't install the package dynamixel_motor. If you do, please remove them with the following command.
+Make sure that you didn't install the package dynamixel_motor. If you did, please remove them with the following command.
 ```sh
 $ sudo apt-get remove ros-indigo-dynamixel-motor ros-indigo-dynamixel-driver ros-indigo-dynamixel-controllers ros-indigo-dynamixel-msgs ros-indigo-dynamixel-tutorials
 ```
