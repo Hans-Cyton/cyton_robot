@@ -65,9 +65,8 @@ $ roslaunch cyton_moveit_config joystick_control.launch
 > 关于手柄遥控的使用方法可以参考下面的链接：  
 http://docs.ros.org/indigo/api/moveit_tutorials/html/doc/ros_visualization/joystick.html  
 Tips:  
-1. In the Motion Planning plugin of Rviz, enable “Allow External Comm.” checkbox in the “Planning” tab.  
-2. Add “Pose” to rviz Displays and subscribe to /joy_pose in order to see the output from joystick.  
-Note that only planning groups that have IK solvers for all their End Effector parent groups will work.
+> 1. In the Motion Planning plugin of Rviz, enable “Allow External Comm.” checkbox in the “Planning” tab.  
+> 2. Add “Pose” to rviz Displays and subscribe to /joy_pose in order to see the output from joystick. Note that only planning groups that have IK solvers for all their End Effector parent groups will work.
 
 ---
 
@@ -134,9 +133,8 @@ $ roslaunch cyton_moveit_config joystick_control.launch
 > 关于手柄遥控的使用方法可以参考下面的链接：  
 http://docs.ros.org/indigo/api/moveit_tutorials/html/doc/ros_visualization/joystick.html  
 Tips:  
-1. In the Motion Planning plugin of Rviz, enable “Allow External Comm.” checkbox in the “Planning” tab.   
-2. Add “Pose” to rviz Displays and subscribe to /joy_pose in order to see the output from joystick.  
-Note that only planning groups that have IK solvers for all their End Effector parent groups will work.
+> 1. In the Motion Planning plugin of Rviz, enable “Allow External Comm.” checkbox in the “Planning” tab.   
+> 2. Add “Pose” to rviz Displays and subscribe to /joy_pose in order to see the output from joystick. Note that only planning groups that have IK solvers for all their End Effector parent groups will work.
 
 在关闭机械臂电源前，先运行以下命令可让机械臂提前去使能，此时请用手保护好机械臂，以防它失力后掉下来。
 ```sh

@@ -64,8 +64,8 @@ $ roslaunch cyton_moveit_config joystick_control.launch
 > Tutorial about joystick control teleoperation:  
 http://docs.ros.org/indigo/api/moveit_tutorials/html/doc/ros_visualization/joystick.html  
 Tips:  
-1. In the Motion Planning plugin of Rviz, enable “Allow External Comm.” checkbox in the “Planning” tab.  
-2. Add “Pose” to rviz Displays and subscribe to /joy_pose in order to see the output from joystick. Note that only planning groups that have IK solvers for all their End Effector parent groups will work.
+> 1. In the Motion Planning plugin of Rviz, enable “Allow External Comm.” checkbox in the “Planning” tab.  
+> 2. Add “Pose” to rviz Displays and subscribe to /joy_pose in order to see the output from joystick. Note that only planning groups that have IK solvers for all their End Effector parent groups will work.
 
 ---
 
@@ -134,8 +134,8 @@ $ roslaunch cyton_moveit_config joystick_control.launch
 > Tutorial about joystick control teleoperation:  
 http://docs.ros.org/indigo/api/moveit_tutorials/html/doc/ros_visualization/joystick.html  
 Tips:  
-1. In the Motion Planning plugin of Rviz, enable “Allow External Comm.” checkbox in the “Planning” tab.  
-2. Add “Pose” to rviz Displays and subscribe to /joy_pose in order to see the output from joystick. Note that only planning groups that have IK solvers for all their End Effector parent groups will work.
+> 1. In the Motion Planning plugin of Rviz, enable “Allow External Comm.” checkbox in the “Planning” tab.  
+> 2. Add “Pose” to rviz Displays and subscribe to /joy_pose in order to see the output from joystick. Note that only planning groups that have IK solvers for all their End Effector parent groups will work.
 
 Before turning the robot off, you can use the following command to set torque disenable. At this time you should protect the robot from falling down.
 ```sh
