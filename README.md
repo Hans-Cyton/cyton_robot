@@ -47,8 +47,9 @@ $ roslaunch cyton_model gazebo.launch
 ```sh
 $ roslaunch cyton_moveit_config moveit_planning_execution.launch
 ```
-> 关于MoveIt!的使用方法可以参考下面的链接：  
-http://docs.ros.org/indigo/api/moveit_tutorials/html/doc/ros_visualization/visualization_tutorial.html
+> 关于MoveIt!的使用方法可以参考[docs/moveit_plugin_tutorial.md](docs/moveit_plugin_tutorial.md)  
+Tips:  
+每次规划路径时，都要设置初始位置为当前位置。
 
 打开以下程序用键盘操作模型：
 ```sh
@@ -113,8 +114,9 @@ $ rosservice call /cyton_go_home "data: true"
 ```sh
 $ roslaunch cyton_moveit_config moveit_planning_execution.launch
 ```
-> 关于MoveIt!的使用方法可以参考下面的链接：  
-http://docs.ros.org/indigo/api/moveit_tutorials/html/doc/ros_visualization/visualization_tutorial.html
+> 关于MoveIt!的使用方法可以参考[docs/moveit_plugin_tutorial.md](docs/moveit_plugin_tutorial.md)  
+Tips:  
+每次规划路径时，都要设置初始位置为当前位置。
 
 打开以下程序用键盘操作机械臂：
 ```sh

@@ -46,8 +46,9 @@ Start up RViz with a configuration including the MoveIt! Motion Planning plugin:
 ```sh
 $ roslaunch cyton_moveit_config moveit_planning_execution.launch
 ```
-> Tutorial about how to use MoveIt! RViz plugin:  
-http://docs.ros.org/indigo/api/moveit_tutorials/html/doc/ros_visualization/visualization_tutorial.html
+> Tutorial about how to use MoveIt! RViz plugin: [docs/moveit_plugin_tutorial_english.md](docs/moveit_plugin_tutorial_english.md)  
+Tips:
+Every time you want to plan a trajectory, you should set the start state to current first.
 
 For the teleoperation with keyboard, run:
 ```sh
@@ -64,7 +65,7 @@ Tips:
 2. Add “Pose” to rviz Displays and subscribe to /joy_pose in order to see the output from joystick. Note that only planning groups that have IK solvers for all their End Effector parent groups will work.
 
 #### Usage with real Hardware
-Firstly please install the driver for the servos.
+Firstly, please install the driver for the servos.
 
 Make sure that you haven't install the package dynamixel_motor. If you do, please remove them with the following command.
 ```sh
@@ -113,8 +114,9 @@ Start up RViz with a configuration including the MoveIt! Motion Planning plugin:
 ```sh
 $ roslaunch cyton_moveit_config moveit_planning_execution.launch
 ```
-> Tutorial about how to use MoveIt! RViz plugin:  
-http://docs.ros.org/indigo/api/moveit_tutorials/html/doc/ros_visualization/visualization_tutorial.html
+> Tutorial about how to use MoveIt! RViz plugin: [docs/moveit_plugin_tutorial_english.md](docs/moveit_plugin_tutorial_english.md)  
+Tips:
+Every time you want to plan a trajectory, you should set the start state to current first.
 
 For the teleoperation with keyboard, run:
 ```sh
