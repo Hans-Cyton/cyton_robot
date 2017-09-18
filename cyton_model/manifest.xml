@@ -1,0 +1,6 @@
+<package>
+  <description brief="cyton_model">cyton_model</description>
+  <depend package="gazebo" />
+  <author>me</author>
+  <license>BSD</license>
+</package>
