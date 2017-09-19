@@ -1,13 +1,6 @@
-revolute_controllers: [joint1, joint2, joint3, joint4, joint5, joint6, joint7]
-prismatic_controllers: [claw]
-prismatic_factors: [[-0.0072, -0.005]]
-
-robot_arm_names: [cyton]
-cyton_controller_names: [joint1, joint2, joint3, joint4, joint5, joint6, joint7, claw]
-
 joint1_controller:
     controller:
-        package: dynamixel_controllers
+        package: cyton_servo_controllers
         module: joint_position_controller
         type: JointPositionController
     joint_name: joint1
@@ -20,7 +13,7 @@ joint1_controller:
 
 joint2_controller:
     controller:
-        package: dynamixel_controllers
+        package: cyton_servo_controllers
         module: joint_position_controller
         type: JointPositionController
     joint_name: joint2
@@ -33,7 +26,7 @@ joint2_controller:
 
 joint3_controller:
     controller:
-        package: dynamixel_controllers
+        package: cyton_servo_controllers
         module: joint_position_controller
         type: JointPositionController
     joint_name: joint3
@@ -46,7 +39,7 @@ joint3_controller:
 
 joint4_controller:
     controller:
-        package: dynamixel_controllers
+        package: cyton_servo_controllers
         module: joint_position_controller
         type: JointPositionController
     joint_name: joint4
@@ -59,7 +52,7 @@ joint4_controller:
 
 joint5_controller:
     controller:
-        package: dynamixel_controllers
+        package: cyton_servo_controllers
         module: joint_position_controller
         type: JointPositionController
     joint_name: joint5
@@ -72,7 +65,7 @@ joint5_controller:
 
 joint6_controller:
     controller:
-        package: dynamixel_controllers
+        package: cyton_servo_controllers
         module: joint_position_controller
         type: JointPositionController
     joint_name: joint6
@@ -85,7 +78,7 @@ joint6_controller:
 
 joint7_controller:
     controller:
-        package: dynamixel_controllers
+        package: cyton_servo_controllers
         module: joint_position_controller
         type: JointPositionController
     joint_name: joint7
@@ -98,7 +91,7 @@ joint7_controller:
 
 claw_controller:
     controller:
-        package: dynamixel_controllers
+        package: cyton_servo_controllers
         module: joint_position_controller
         type: JointPositionController
     joint_name: claw

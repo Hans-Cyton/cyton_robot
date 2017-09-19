@@ -1,6 +1,7 @@
 <package>
   <description brief="cyton_model">cyton_model</description>
   <depend package="gazebo" />
+  <depend package="gazebo_ros_control" />
   <author>me</author>
   <license>BSD</license>
 </package>

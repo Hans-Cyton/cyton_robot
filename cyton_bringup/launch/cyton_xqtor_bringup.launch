@@ -1,5 +1,5 @@
 <launch>
-    <node name="dynamixel_manager" pkg="dynamixel_controllers" type="controller_manager.py" required="true" output="screen">
+    <node name="dynamixel_manager" pkg="cyton_servo_controllers" type="controller_manager.py" required="true" output="screen">
         <rosparam>
             namespace: dxl_manager
             serial_ports:
@@ -11,5 +11,5 @@
                     update_rate: 20
         </rosparam>
     </node>
-    <include file="$(find cyton_bringup)/launch/cyton_spawner.launch"/>
+    <include file="$(find cyton_bringup)/launch/cyton_xqtor_spawner.launch"/>
 </launch>

@@ -6,6 +6,28 @@ if you don't speak chinese, please [click here](./README_english.md).
 
 ### 安装软件包
 
+**安装一些重要的依赖包**
+```sh
+$ sudo apt-get install ros-indigo-dynamixel-motor ros-indigo-gazebo-ros-control
+```
+**安装和升级MoveIt!,** 注意因为MoveIt!最新版进行了很多的优化，如果你已经安装了MoveIt!, 也请一定按照以下方法升级到最新版。
+
+安装MoveIt!：
+```sh
+$ sudo apt-get install ros-indigo-moveit
+$ sudo apt-get install ros-indigo-moveit-full-pr2
+$ sudo apt-get install ros-indigo-moveit-kinematics
+$ sudo apt-get install ros-indigo-moveit-ros-move-group
+```
+升级MoveIt!:
+```sh
+$ sudo apt-get update
+$ sudo apt-get upgrade
+$ sudo apt-get install ros-indigo-moveit-kinematics
+$ sudo apt-get install ros-indigo-moveit-ros-move-group
+```
+**安装本软件包**
+
 首先创建catkin工作空间 ([教程](http://wiki.ros.org/catkin/Tutorials))。 然后将本文件夹克隆到src/目录下，之后用catkin_make来编译。  
 假设你的工作空间是~/catkin_ws，你需要运行的命令如下：
 ```sh
@@ -14,28 +36,6 @@ $ git clone https://github.com/Hans-Cyton/cyton_robot.git
 $ cd ..
 $ catkin_make
 $ source devel/setup.bash
-```
-
-在使用前请先安装和升级MoveIt!, 注意因为MoveIt!最新版进行了很多的优化，如果你已经安装了MoveIt!, 也请一定按照以下方法升级到最新版。
-
-**安装MoveIt!：**
-
-在Ubuntu14.04下安装：
-
-```sh
-$ sudo apt-get install ros-indigo-moveit
-$ sudo apt-get install ros-indigo-moveit-full-pr2
-$ sudo apt-get install ros-indigo-moveit-kinematics
-$ sudo apt-get install ros-indigo-moveit-ros-move-group
-```
-**升级MoveIt!:**
-
-运行以下命令升级MoveIt! :
-```sh
-$ sudo apt-get update
-$ sudo apt-get upgrade
-$ sudo apt-get install ros-indigo-moveit-kinematics
-$ sudo apt-get install ros-indigo-moveit-ros-move-group
 ```
 
 ---
@@ -71,43 +71,28 @@ Tips:
 ---
 
 ### 使用真实的Cyton机器人
-在开始之前，请先安装相应的舵机驱动，步骤如下：
-
-首先，先确认你的电脑上没有事先安装dynamixel_motor，如果安装过的话，请先运行以下指令将其卸载
-```sh
-$ sudo apt-get remove ros-indigo-dynamixel-motor ros-indigo-dynamixel-driver ros-indigo-dynamixel-controllers ros-indigo-dynamixel-msgs ros-indigo-dynamixel-tutorials
-```
-然后根据你使用的舵机品牌来进行安装：
-
-如果你使用的Cyton机械臂搭载的是**dynamixel**的舵机的话，运行以下命令安装驱动：
-```sh
-$ cd your_catkin_ws/src
-$ git clone https://github.com/onionsflying/dynamixel_motor.git
-$ cd ..
-$ catkin_make
-```
-如果你使用的Cyton机械臂搭载的是**Han's xQtor**的舵机的话，运行以下命令安装驱动：
-```sh
-$ cd your_catkin_ws/src
-$ git clone https://github.com/Hans-Cyton/dynamixel_motor.git
-$ cd ..
-$ catkin_make
-```
-
-安装好驱动后，将Cyton通过USB线连接到电脑。用以下命令可以查到当前电脑连接的USB设备的编号：
+将Cyton通过USB线连接到电脑。用以下命令可以查到当前电脑连接的USB设备的编号：
 ```sh
 $ ls /dev/ttyUSB*
 ```
-如果有多个设备的话，可以先在不连Cyton的情况下确定其他设备的编号，再插入Cyton连接线，这样新增加的设备编号就是Cyton的了。本软件包默认的编号是/dev/ttyUSB0 。假如当前编号不是0的话，请对cyton_bringup/launch/cyton_bringup.launch文件的相应部分进行修改。
+如果有多个设备的话，可以先在不连Cyton的情况下确定其他设备的编号，再插入Cyton连接线，这样新增加的设备编号就是Cyton的了。本软件包默认的编号是/dev/ttyUSB0 。假如当前编号不是0的话，请对cyton_bringup/launch/cyton_dxl_bringup.launch或cyton_bringup/launch/cyton_xqtor_bringup.launch的相应部分进行修改。
 ```
 port_name: "/dev/ttyUSB0"
 ```
 
-现假设设备编号是/dev/ttyUSB0，运行以下指令启动驱动：
+现假设设备编号是/dev/ttyUSB0，请根据你所使用的舵机来启动Cyton
+
+假如你使用的是**dynamixel**的舵机的话，运行以下指令来启动驱动：
 ```sh
 $ sudo chmod 777 /dev/ttyUSB0
-$ roslaunch cyton_bringup cyton_bringup.launch
+$ roslaunch cyton_bringup cyton_dxl_bringup.launch
 ```
+假如你使用的是**Han's xQtor**的舵机的话，运行以下指令来启动驱动：
+```sh
+$ sudo chmod 777 /dev/ttyUSB0
+$ roslaunch cyton_bringup cyton_xqtor_bringup.launch
+```
+
 令机械臂回到起始位姿：
 ```sh
 $ rosservice call /cyton_go_home "data: true"

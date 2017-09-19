@@ -4,7 +4,29 @@ Cyton Robot
 This repository provides ROS support for the Cyton Robot. The recommend operating environment is on Ubuntu 14.04 with ROS Indigo. So far These packages haven't been tested in other environment.
 
 ### Installation
+**Install some important dependent software packages:**
+```sh
+$ sudo apt-get install ros-indigo-dynamixel-motor ros-indigo-gazebo-ros-control
+```
+**Install or upgrade MoveIt!.** If you have installed MoveIt!, please make sure that it's been upgraded to the latest version.
 
+Install MoveIt!:
+
+```sh
+$ sudo apt-get install ros-indigo-moveit
+$ sudo apt-get install ros-indigo-moveit-full-pr2
+$ sudo apt-get install ros-indigo-moveit-kinematics
+$ sudo apt-get install ros-indigo-moveit-ros-move-group
+```
+Upgrade MoveIt!:
+
+```sh
+$ sudo apt-get update
+$ sudo apt-get upgrade
+$ sudo apt-get install ros-indigo-moveit-kinematics
+$ sudo apt-get install ros-indigo-moveit-ros-move-group
+```
+**Install this repository from Source**
 First set up a catkin workspace (see [this tutorials](http://wiki.ros.org/catkin/Tutorials)).  
 Then clone the repository into the src/ folder. It should look like /path/to/your/catkin_workspace/src/cyton_robot.  
 Make sure to source the correct setup file according to your workspace hierarchy, then use catkin_make to compile.  
@@ -16,25 +38,6 @@ $ git clone https://github.com/Hans-Cyton/cyton_robot.git
 $ cd ..
 $ catkin_make
 $ source devel/setup.bash
-```
-
-Then you should install or upgrade MoveIt!. If you have installed MoveIt!, please make sure that it's been upgraded to the latest version.
-
-**Install MoveIt!**
-
-```sh
-$ sudo apt-get install ros-indigo-moveit
-$ sudo apt-get install ros-indigo-moveit-full-pr2
-$ sudo apt-get install ros-indigo-moveit-kinematics
-$ sudo apt-get install ros-indigo-moveit-ros-move-group
-```
-**Upgrade MoveIt!:**
-
-```sh
-$ sudo apt-get update
-$ sudo apt-get upgrade
-$ sudo apt-get install ros-indigo-moveit-kinematics
-$ sudo apt-get install ros-indigo-moveit-ros-move-group
 ```
 
 ---
@@ -70,42 +73,26 @@ Tips:
 ---
 
 ### Usage with real Hardware
-Firstly, please install the driver for the servos.
-
-Make sure that you didn't install the package dynamixel_motor. If you did, please remove them with the following command.
-```sh
-$ sudo apt-get remove ros-indigo-dynamixel-motor ros-indigo-dynamixel-driver ros-indigo-dynamixel-controllers ros-indigo-dynamixel-msgs ros-indigo-dynamixel-tutorials
-```
-Then install your driver according to the servo brand.
-
-If you are using **dynamixel** servos, install the driver with following commands:
-```sh
-$ cd your_catkin_ws/src
-$ git clone https://github.com/onionsflying/dynamixel_motor.git
-$ cd ..
-$ catkin_make
-```
-If you are using **Han's xQtor** servos, install the driver with following commands:
-```sh
-$ cd your_catkin_ws/src
-$ git clone https://github.com/Hans-Cyton/dynamixel_motor.git
-$ cd ..
-$ catkin_make
-```
-
-Then connect Cyton to the computer with a usb cable. You can see the usb device ID(s) with the following command.
+Connect Cyton to the computer with a usb cable. You can see the usb device ID(s) with the following command.
 ```sh
 $ ls /dev/ttyUSB*
 ```
-If there are more than one usb devices, you should confirm the ID(s) of the other device(s) before you connect Cyton to the computer. In this case you can find out the device ID of Cyton. The default ID is /dev/ttyUSB0. If your device ID is not /dev/ttyUSB0, you should correct the following line in the file cyton_bringup/launch/cyton_bringup.launch
+If there are more than one usb devices, you should confirm the ID(s) of the other device(s) before you connect Cyton to the computer. In this case you can find out the device ID of Cyton. The default ID is /dev/ttyUSB0. If your device ID is not /dev/ttyUSB0, you should correct the following line in the file *cyton_bringup/launch/cyton_dxl_bringup.launch* or *cyton_bringup/launch/cyton_xqtor_bringup.launch*
 ```
 port_name: "/dev/ttyUSB0"
 ```
 
-Assuming the device ID is /dev/ttyUSB0, to bring up the real robot, run:
+Assuming the device ID is /dev/ttyUSB0, bring up the real robot according to the servo brand
+
+If you are using **dynamixel** servos, run:
 ```sh
 $ sudo chmod 777 /dev/ttyUSB0
-$ roslaunch cyton_bringup cyton_bringup.launch
+$ roslaunch cyton_bringup cyton_dxl_bringup.launch
+```
+If you are using **Han's xQtor** servos, run:
+```sh
+$ sudo chmod 777 /dev/ttyUSB0
+$ roslaunch cyton_bringup cyton_xqtor_bringup.launch
 ```
 Make the robot go to home position:
 ```sh
