@@ -27,6 +27,7 @@ $ sudo apt-get install ros-indigo-moveit-kinematics
 $ sudo apt-get install ros-indigo-moveit-ros-move-group
 ```
 **Install this repository from Source**
+
 First set up a catkin workspace (see [this tutorials](http://wiki.ros.org/catkin/Tutorials)).  
 Then clone the repository into the src/ folder. It should look like /path/to/your/catkin_workspace/src/cyton_robot.  
 Make sure to source the correct setup file according to your workspace hierarchy, then use catkin_make to compile.  
