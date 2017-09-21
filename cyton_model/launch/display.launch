@@ -2,9 +2,7 @@
   <arg name="model" />
   
   <arg name="gui" default="true" />
-  
-  <!--param name="robot_description" textfile="$(find HansCyton300ES)/robots/HansCyton300ES.URDF" /-->
-  
+    
   <param name="robot_description" command="$(find xacro)/xacro.py '$(find cyton_model)/robots/cyton_300es.urdf.xacro'" />
   
   <param name="use_gui" value="$(arg gui)" />

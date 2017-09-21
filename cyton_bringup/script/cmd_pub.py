@@ -6,7 +6,7 @@ Created on Mon Aug 28 14:41:00 2017
 @author: Cong Liu
  Software License Agreement (BSD License)
 
- Copyright (c) 2017, Han's Motor S&T Co., Ltd.
+ Copyright (c) 2017, Han's Robot Co., Ltd.
  All rights reserved.
 
  Redistribution and use in source and binary forms, with or without

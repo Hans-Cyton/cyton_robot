@@ -5,7 +5,7 @@ Created on Wed Aug 23 10:40:20 2017
 
  Software License Agreement (BSD License)
 
- Copyright (c) 2017, Han's Motor S&T Co., Ltd.
+ Copyright (c) 2017, Han's Robot Co., Ltd.
  All rights reserved.
 
  Redistribution and use in source and binary forms, with or without
